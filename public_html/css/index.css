@@ -1,41 +1,52 @@
+.pog {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
 h1 {
-    text-align: center;
-    -webkit-animation: colorchange 25s infinite alternate;
-    -moz-animation: colorchange 25s infinite alternate;
+
+    -webkit-animation: colorchange 2s infinite alternate;
+    -moz-animation: colorchange 2s infinite alternate;
   }
   @-webkit-keyframes colorchange {
     0% {
-      color: blue;
+      color: rgb(255, 0, 0);
     }
     10% {
-      color: #8e44ad;
+      color: #ff9100;
     }
     20% {
-      color: #1abc9c;
+      color: #eeff00;
     }
     30% {
-      color: #d35400;
+      color: #1eff00;
     }
     40% {
-      color: blue;
+      color: rgb(0, 217, 255);
     }
     50% {
-      color: #34495e;
+      color: #0080ff;
     }
     60% {
       color: blue;
     }
     70% {
-      color: #2980b9;
+      color: #5900ff;
     }
     80% {
-      color: #f1c40f;
+      color: #a200ff;
     }
     90% {
-      color: #2980b9;
+      color: #ff00d4;
     }
     100% {
-      color: pink;
+      color: rgb(255, 0, 43);
     }
   }
-  
+p {
+    margin: auto;
+    width: 50%;
+    height: auto;
+
+}
