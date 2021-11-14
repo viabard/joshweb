@@ -1,0 +1,19 @@
+div.title {
+    text-align: center;
+    font-size: 3vmax;
+    background-color: #FFE6F2;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 5vmin;
+    color: rgb(255, 128, 187);
+    font-family: monospace;
+}
+div.body {
+    background-color:#FFE6F2;
+    text-align: left;
+    text-transform: 5vmax;
+    font-family: monospace;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 2vmin;
+}
