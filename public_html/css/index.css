@@ -1,13 +1,8 @@
-.pog {
+.background {
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
-  }
-h1 {
-
-    -webkit-animation: colorchange 2s infinite alternate;
-    -moz-animation: colorchange 2s infinite alternate;
+    width: 100% 100%;
+    background-position: 50% 50%;
+    background-image: url('/images/backgrounds/johannes.jpg');
   }
   @-webkit-keyframes colorchange {
     0% {
