@@ -1,24 +1,24 @@
 div.title {
     text-align: center;
-    font-size: 3vmax;
+    font-size: 4vw;
     background-color: #FFE6F2;
     margin-left: 30%;
     margin-right: 30%;
-    border-radius: 5vmin;
+    border-radius: 30%;
     color: rgb(255, 128, 187);
     font-family: Arial, Helvetica, sans-serif;
 }
 div.body {
     background-color:#FFE6F2;
     text-align: left;
-    text-transform: 5vmax;
+    text-transform: 5vw;
     font-family: monospace;
-    margin-left: 5vmax;
-    margin-right: 5vmax;
-    border-radius: 2vmin;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 2vw;
 }
 div.links {
-    margin-left: 5vmax;
+    margin-left: 5vw;
 }
 div.linkstitle {
     display:inline-block;
