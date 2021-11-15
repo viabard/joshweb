@@ -5,8 +5,12 @@ div.title {
     margin-left: 30%;
     margin-right: 30%;
     border-radius: 30%;
-    color: rgb(255, 128, 187);
+    color: rgb(97, 119, 94);
     font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-image:  url('/images/backgrounds/fast_white_sparkles.gif'), url('/images/backgrounds/light_pink_green_leaves.gif');
+    background-position: 0;
 }
 div.body {
     background-color:#FFE6F2;
@@ -18,9 +22,41 @@ div.body {
     border-radius: 2vw;
 }
 div.links {
-    margin-left: 5vw;
+    padding-left: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 div.linkstitle {
     display:inline-block;
     font-weight: bold;
+    background-color:#ffffff;
+    border-radius: 30%;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    padding-left: .25em;
+    padding-right: .25em;
+}
+
+img.hanging_plant_1 {
+    position: fixed;
+    width: 7vw;
+    transform: translate(80vw, -10px);
+}
+
+img.hanging_plant_2 {
+    position: fixed;
+    width: 7vw;
+    transform: translate(1vw, -20px)
+}
+
+img.hanging_sparkle {
+    position: fixed;
+    width: 15vw;
+    transform: translate(-2.5vw, 8vh)
+}
+
+div.background {
+    background-image: url('/images/backgrounds/pink_roses_fern.gif');
+    background-attachment: fixed;
+    min-height: 100%;
 }
