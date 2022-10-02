@@ -98,8 +98,8 @@ function draw() {
     
     fill(255);
     for(let i = 0; i < bubbles.length; i++){
-        let speed = 10 + Math.random()*10;
-        let jitter = speed / 3;
+        let speed = 10 + Math.random()*20;
+        let jitter = speed / 10000;
         bubbles[i].move(speed, 0, jitter);
         bubbles[i].show();
     }
