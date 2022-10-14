@@ -4,14 +4,15 @@ function clamp(number, min, max){
 }
 
 class Bubble {
-    constructor(x, start_at, size) {
+    constructor(x, start_at, size, speed = 1, sway = 1, jitter = 1) {
         this.x = x;
         this.start_at = start_at;
         this.size = size;
+        this.speed = speed;
+        this.sway = sway;
+        this.jitter = jitter;
 
-      
-      
-      
+
         this.width = 60;
         this.height = this.width*2;
         this.start_x = x;
@@ -60,7 +61,7 @@ class Bubble {
 
     }
 
-    move(speed = 1, sway = 1, jitter = 1) {
+    move(speed, sway, jitter) {
         speed = Math.trunc(speed);
         
         if(this.y_ind >= this.y_moves.length){this.y_ind = 0}
@@ -71,7 +72,8 @@ class Bubble {
         this.y = this.y_moves[this.y_ind] + ((Math.random() - 0.5) * jitter);
     }
 
-    show() {
+    show(speed = this.speed, sway = this.sway, jitter = this.jitter) {
+        this.move(speed, sway, jitter);
         stroke(255);
         strokeWeight(4);
         noFill();
@@ -83,13 +85,15 @@ let bubbles = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    for(let i = 0; i < 100; i++){
+    let num_bubbles = Math.floor(windowWidth/30);
+    for(let i = 0; i < num_bubbles; i++){
         let random_width = Math.trunc(Math.random()*windowWidth);
         let random_size = 20 + Math.random()*120;
+        let speed = 10 + Math.random()*20;
+        let jitter = 0; //0 for now
 
-        bubbles.push(new Bubble(random_width, Math.random(), random_size));
+        bubbles.push(new Bubble(random_width, Math.random(), random_size, speed, 0, jitter));
     }
-    bubble = new Bubble(200, 0, 200);
     
 }
 
@@ -98,9 +102,6 @@ function draw() {
     
     fill(255);
     for(let i = 0; i < bubbles.length; i++){
-        let speed = 10 + Math.random()*20;
-        let jitter = speed / 10000;
-        bubbles[i].move(speed, 0, jitter);
         bubbles[i].show();
     }
 
