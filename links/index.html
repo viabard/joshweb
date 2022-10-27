@@ -6,10 +6,17 @@
     </head>
     <div class='background'> 
         <body> 
+            
             <img src='/images/backgrounds/hanging_green_plant.gif' class='hanging_plant_1'>
-            <img src='/images/backgrounds/hanging_clay_pot.gif' class='hanging_plant_2'>
+            
             <img src='/images/backgrounds/small_sparkles.gif' class='hanging_sparkle'>
             <img src='/images/backgrounds/hanging_ivy.gif' class='hanging_plant_3'>
+            <div class="back">
+                <a href="https://joshschaaf.com" { text-decoration: none; }>
+                    HOME
+                    <img src='/images/backgrounds/hanging_clay_pot.gif' class='hanging_plant_2'>
+                </a>
+            </div>
             <div class='title'>
                 <div class='linkstitle'>Links</div>
             </div>
@@ -20,20 +27,8 @@
                     <div class='link_subtitle'>
                         Resume Stuff
                     </div><br>
-
-                    <div class='single_link'>
-                        My current resume -
-                        <a href='https://joshschaaf.com/images/resume/current-resume.pdf' target="_blank" rel="noopener noreferrer">
-                            https://joshschaaf.com/images/resume/current-resume.pdf
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'>
-                        Conditional Mutagenesis of tcf21 in Zebrafish --- undergraduate research poster -
-                        <a href='https://joshschaaf.com/images/resume/tcf21-poster.pdf' target="_blank" rel="noopener noreferrer">
-                            https://joshschaaf.com/images/resume/tcf21-poster.pdf
-                        </a>
-                    </div><br>
+                    
+                    <resume-elements></resume-elements>
 
                 </div>
             </div>
@@ -44,40 +39,7 @@
                         Creative Coding in Javascript
                     </div><br>
 
-                    <div class='single_link'>
-                        Stars -
-                        <a href='https://joshschaaf.com/creative-coding/stars' target="_blank" rel="noopener noreferrer">
-                            https://joshschaaf.com/creative-coding/stars
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'>
-                        Bubbles!! -
-                        <a href='https://joshschaaf.com/creative-coding/bubbles' target="_blank" rel="noopener noreferrer">
-                            https://joshschaaf.com/creative-coding/bubbles
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'> <!--- make sure to do give the style margin-bottom for all bottom links --->
-                        Messing with matter -
-                        <a href='https://joshschaaf.com/creative-coding/matter' target="_blank" rel="noopener noreferrer">
-                            https://joshschaaf.com/creative-coding/matter
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'>
-                        The library I am using to do most of the drawing and rendering -
-                        <a href='https://p5js.org/' target="_blank" rel="noopener noreferrer">
-                            https://p5js.org/
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'>
-                        The physics engine I use. Has its own renderer, but I use p5js for rendering -
-                        <a href='https://brm.io/matter-js/' target="_blank" rel="noopener noreferrer">
-                            https://brm.io/matter-js/
-                        </a>
-                    </div><br>
+                    <creative-coding></creative-coding>
 
                 </div>
             </div>
@@ -87,33 +49,7 @@
                         Images, GIFs, etc.
                     </div><br>
 
-                    <div class='single_link'>
-                        Turns ur text into a 3d gif with some squiggly properties -
-                        <a href='https://3dtext2gif.com/' target="_blank" rel="noopener noreferrer">
-                        https://3dtext2gif.com/
-                        </a>
-                    </div><br>
-
-                    <div class='single_link'>
-                        Mainly used for GIF cropping, but so many more uses -
-                        <a href='https://ezgif.com/crop' target="_blank" rel="noopener noreferrer">
-                        https://ezgif.com/crop
-                        </a>
-                    </div><br>
-                    
-                    <div class='single_link'>
-                        Many of the GIFs found by searching 'thing transparent' -
-                        <a href='https://giphy.com' target="_blank" rel="noopener noreferrer">
-                            https://giphy.com
-                        </a>
-                    </div><br>
-
-                    <div class='single_link' > <!--- make sure to do give the style margin-bottom for all bottom links --->
-                        Johannes Vermeer aesthetic ?! -
-                        <a href='https://www.britannica.com/biography/Johannes-Vermeer' target="_blank" rel="noopener noreferrer">
-                        https://www.britannica.com/biography/Johannes-Vermeer
-                        </a>
-                    </div>
+                    <ige></ige>
 
                 </div>
             </div>
@@ -123,30 +59,15 @@
                         Resources for HTML/CSS/JS
                     </div><br>
 
-                    <div class='single_link' style='margin-bottom: 0;'>
-                        Interactive HTML/CS/JS page editor w/ descriptions -
-                        <a href='https://htmlcheatsheet.com/' target="_blank" rel="noopener noreferrer">
-                        https://htmlcheatsheet.com/
-                        </a>
-                    </div><br>
+                    <resources-elements></resources-elements>
+
 
                 </div>
             </div>
-            <!--- 
-            <div class='group'>
-                <div class='links'>
-                    <div class='link_subtitle'>
-                         Subtitle here 
-                    </div>
-                    <div class='single_link'>
-                         link here 
-                    </div>
-                    <div class='single_link' style='margin-bottom: 0;'>  make sure to do give the style margin-bottom for all bottom links 
-                         link here 
-                    </div>
-                </div>
-            </div>
-            --->
         </div>
+        <script src="js/creative-coding-elements.js"></script>
+        <script src="js/images-gifs-etc.js"></script>
+        <script src="js/resources-elements.js"></script>
+        <script src="js/resume-elements.js"></script>
     </body>
 </html>

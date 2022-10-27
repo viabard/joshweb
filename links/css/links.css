@@ -11,6 +11,14 @@ div.title {
     background-image:  url('/images/backgrounds/fast_white_sparkles.gif'), url('/images/backgrounds/light_pink_green_leaves.gif');
     background-position: 0;
 }
+div.back{
+    text-align: left;
+    position: fixed;
+    font-size: 3vmax;
+    background-color:#FFE6F2;
+    border-radius: 30%;
+    padding: .25em;
+}
 div.group {
     background-color:#FFE6F2;
     text-align: left;
