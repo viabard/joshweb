@@ -12,6 +12,6 @@ Object.keys(images_gifs_etc).forEach(key => {
     html_string += `<div class='single_link'>${key} - <a href='${images_gifs_etc[key]}' target="_blank" rel="noopener noreferrer">${images_gifs_etc[key]}</a></div><br>`;
 });
 
-print(html_string);
+
 
 resume.innerHTML = html_string;
