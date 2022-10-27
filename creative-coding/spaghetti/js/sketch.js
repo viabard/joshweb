@@ -34,16 +34,11 @@ function setup() {
     // right
     boxes.push(new Box(pot_x + pot_width/2, pot_y - pot_height*6, pot_box_width, pot_height*12, true, pot_color))
 
-    // bunch of spaghetti
-    var num_spaghetti = 10;
-    for (let i = 0; i < num_spaghetti; i++){
-        spaghetti.push(new Spaghetti(pot_x + Math.random() * pot_width - pot_width/2, 0));
-    }
 
 }
 
 function draw() {
-    background(255);
+    background('rgb(255,209,220)');
     for (var i = 0; i < boxes.length; i++){
         boxes[i].show();
     }
@@ -53,10 +48,10 @@ function draw() {
 
 }
 
-function mouseDragged(){
-    
+function mouseClicked(){
+    spaghetti.push(new Spaghetti(mouseX, 0));
 }
 
-function mouseWheel(){
+function mouseDragged(){
     boxes.push(new Box(mouseX, mouseY, 20, 20));
 }

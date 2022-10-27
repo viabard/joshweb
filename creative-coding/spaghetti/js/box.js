@@ -1,5 +1,5 @@
 class Box {
-    constructor(x, y, w, h, fixed = false, fill = 127, stroke = 0){
+    constructor(x, y, w, h, fixed = false, fill = 'rgb(255, 100, 0)', stroke = 0){
         var options = {
             friction: 0.2,
             restitution: 0
