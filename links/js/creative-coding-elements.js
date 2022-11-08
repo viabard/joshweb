@@ -4,7 +4,8 @@ const main = document.querySelector('creative-coding');
 var creative_coding_dict = {
     'Stars': 'https://joshschaaf.com/creative-coding/stars',
     'Bubbles': 'https://joshschaaf.com/creative-coding/bubbles',
-    'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti'
+    'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti',
+    'Spinny Thing (Inspired by Juhani Halkomäki)': 'https://joshschaaf.com/creative-coding/spinny-thing'
 };
 
 var html_string = ``;
