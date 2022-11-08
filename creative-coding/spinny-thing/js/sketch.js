@@ -1,4 +1,4 @@
-let s;
+let s = [];
 let r = 0;
 let g = 0;
 let b = 0;
@@ -6,7 +6,10 @@ let b = 0;
 function setup() {
     createCanvas(windowWidth, windowHeight);
 
-    s = new PointString(windowWidth/2, windowHeight/2, 750, 0, 0.85, 40);
+    s.push(new PointString(windowWidth/2, windowHeight/2, 100, 0, 0.85, 40, false, true));
+    s.push(new PointString(windowWidth/2, windowHeight/2, 200, 0, 0.85, 40, false, true));
+    s.push(new PointString(windowWidth/2, windowHeight/2, 400, 0, 0.85, 40, false, true));
+    s.push(new PointString(windowWidth/2, windowHeight/2, 200, 0, 0.85, 40, false, true));
 
 }
 
@@ -18,8 +21,10 @@ function draw() {
     stroke(r, g, b);
     strokeWeight(2);
 
-    s.move();
-    s.move(); // faster!
-    s.show();
+    for(let i = 0; i < s.length; i++){
+        s[i].move();
+        s[i].move();
+        s[i].show();
+    }
 
 }

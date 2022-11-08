@@ -18,11 +18,15 @@ class Point {
         this.prev_point = prev_point;
         this.damper = damper;
         this.point_distance = point_distance;
+        console.log(fixed)
+    }
+    
+    update_prev(new_prev) {
+        this.prev_point = new_prev;
     }
 
     move(x_accel = this.x_accel, y_accel = this.y_accel) {
         if(!this.fixed){
-
             if(mouseIsPressed){
                 let dx = mouseX - this.x;
                 let dy = mouseY - this.y;
@@ -53,6 +57,9 @@ class Point {
                     this.y_vel += (y_accel + dy*3) / 5;
                 }
                 
+            } else {
+                this.x_vel += x_accel;
+                this.y_vel += y_accel;
             }
 
             // damper the velocities
@@ -80,6 +87,8 @@ class Point {
             } if (this.y < 0) {
                 this.y = windowHeight;
             }*/
+        } else {
+            console.log('what the heck')
         }
     }
 
