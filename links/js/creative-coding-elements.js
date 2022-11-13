@@ -6,6 +6,7 @@ var creative_coding_dict = {
     'Bubbles': 'https://joshschaaf.com/creative-coding/bubbles',
     'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti',
     'Spinny Thing': 'https://joshschaaf.com/creative-coding/spinny-thing',
+    'Piet Mondrian': 'https://joshschaaf.com/creative-coding/mondrian',
     'Current Sketch': 'https://joshschaaf.com/creative-coding/current-sketch'
 };
 
