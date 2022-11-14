@@ -33,7 +33,6 @@ function draw() {
             lines[i] = new ShootingLine(Math.random()*windowWidth, Math.random()*windowHeight,Math.floor(Math.random() * 4)+1, Math.random() * max_line_length + min_line_length, Math.random() * max_line_speed + min_line_speed);
         }
         find_collisions();
-        //find_rectangles();
         show_rectangles();
     }
 }
@@ -100,31 +99,6 @@ function find_collisions() {
     }
 }
 
-function find_rectangles() {
-    rectangles = new Set();
-    sides.forEach(side1 => {
-        sides.forEach(side2 => {
-            if(side1 != side2) {
-                if(side1[1] == side2[1] && side1[2] == side2[2]) {
-                    let x1 = Math.min(side1[0], side2[0]);
-                    let x2 = Math.max(side1[0], side2[0]);
-
-                    let y1 = Math.min(side1[1], side1[2]);
-                    let y2 = Math.max(side1[1], side1[2]);
-
-                    let rect = String([x1, y1, x2, y2]);
-
-                    if(!(rectangles.has(rect))) {
-                        if(!(rect in rectangles_dict)){
-                            rectangles_dict[rect] = new Rectangle(x1, y1, x2, y2);
-                        }
-                        rectangles.add(rect);
-                    }
-                }
-            }
-        })
-    });
-}
 
 function show_rectangles() {
     for(let property in rectangles_dict) {

@@ -7,7 +7,7 @@ class Point {
 
         NOTE: requires a damper, 0.95 works well
     */
-    constructor(x, y, fixed=false, damper=0.9, point_distance=1) {
+    constructor(x, y, fixed=false, prev_point, damper=0.9, point_distance=1) {
         this.x = x;
         this.y = y;
         this.x_vel = 0;
@@ -15,6 +15,7 @@ class Point {
         this.x_accel = 0;
         this.y_accel = 0;
         this.fixed = fixed;
+        this.prev_point = prev_point;
         this.damper = damper;
         this.point_distance = point_distance;
     }
@@ -84,8 +85,6 @@ class Point {
     }
 
     show() {
-        push();
-        rotate();
         circle(this.x, this.y, 10);
     }
 }
