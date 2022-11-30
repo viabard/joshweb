@@ -1,9 +1,8 @@
-// a shader variable
-let theShader;
+//this variable will hold our shader object
+let shapeShader;
 
 function preload(){
-  // load the shader
-  theShader = loadShader('onecolor.vert', 'onecolor.frag');
+  theShader = loadShader('assets/onecolor.vert', 'assets/onecolor.frag');
 }
 
 function setup() {
@@ -12,15 +11,19 @@ function setup() {
   noStroke();
 }
 
-function draw() {
+function draw() {  
   // shader() sets the active shader with our shader
   shader(theShader);
-
-  // rect gives us some geometry on the screen
-  rect(0,0,width,height);
   
-  // print out the framerate
-  //  print(frameRate());
+  // lets send the resolution, mouse, and time to our shader
+  // before sending mouse + time we modify the data so it's more easily usable by the shader
+  theShader.setUniform('resolution', [width, height]);
+  theShader.setUniform('mouse', map(mouseX, 0, width, 0, 7));
+  theShader.setUniform('time', frameCount * 0.01);
+  
+  
+  // rect gives us some geometry on the screen
+  rect(0,0);
 }
 
 function windowResized(){
