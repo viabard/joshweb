@@ -9,13 +9,14 @@ precision mediump float;
 
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
+#define NUM_BLOBS 5
 
 // we need the sketch resolution to perform some calculations
 uniform vec2 u_resolution;
 uniform float u_time;
 uniform vec2 u_mouse;
-uniform int u_numBlobs;
-uniform float u_blobs[100*4]; // MAX 100 BLOBS
+
+uniform float u_blobs[NUM_BLOBS*4]; // each blob provides 4 values
 
 
 // this is a function that turns an rgb value that goes from 0 - 255 into 0.0 - 1.0
@@ -33,7 +34,7 @@ vec2 rotate2D (vec2 _st, float _angle) {
 
 void main() {
   vec2 st = gl_FragCoord.xy/u_resolution.xy; // if this is weird, make sure pixelDensity is set to 1 in p5
-  
+
   vec3 color = vec3(0.0, 0.0, 0.0);
 
   
@@ -44,5 +45,22 @@ void main() {
   st = rotate2D(st, PI*2.0/3.0);
   color.x = st.y;
   
+
+
+
+  float sum = 0.0;
+  for(int i = 0; i < NUM_BLOBS; i++) {
+    vec2 current_blob = vec2(u_blobs[i*4], u_blobs[i*4+1]);
+    vec2 current_blob_st = current_blob.xy/u_resolution.xy;
+
+    // get distance between point and blob
+    float d = distance(st, current_blob_st);
+
+    // map the inverse of the distance (darker further away)
+    sum = sum + d;
+  }
+  color.xyz -= sum/float(NUM_BLOBS*2);
+  
+
   gl_FragColor = vec4(color, 1.0);
 }

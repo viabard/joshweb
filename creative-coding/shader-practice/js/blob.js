@@ -7,10 +7,10 @@ class MyBlob {
     }
 
     move(){
-        this.x += this.xvel;
-        this.y += this.yvel;
+        this.x += this.xv;
+        this.y += this.yv;
 
-        if(this.x < 0 || this.x > width) this.xvel *= -1;
-        if(this.y < 0 || this.y > height) this.yvel *= -1;
+        if(this.x < 0 || this.x > width) this.xv *= -1;
+        if(this.y < 0 || this.y > height) this.yv *= -1;
     }
 }
