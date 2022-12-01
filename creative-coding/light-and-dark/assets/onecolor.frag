@@ -9,7 +9,9 @@ precision mediump float;
 
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
-#define NUM_BLOBS 5
+
+#define RADIUS 0.35
+#define NUM_BLOBS 2
 
 // we need the sketch resolution to perform some calculations
 uniform vec2 u_resolution;
@@ -55,11 +57,18 @@ void main() {
 
     // get distance between point and blob
     float d = distance(st, current_blob_st);
-
-    // map the inverse of the distance (darker further away)
-    sum = sum + d;
+    
+    if(i == 0){
+      sum += RADIUS * (RADIUS / d);
+    }else{
+      sum -= RADIUS * (RADIUS / d);
+    }
+    
+    
   }
-  color.xyz -= sum/float(NUM_BLOBS*2);
+
+  
+  color.xyz -= sum;
   
 
   gl_FragColor = vec4(color, 1.0);

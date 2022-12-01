@@ -7,7 +7,7 @@ var creative_coding_dict = {
     'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti',
     'Spinny Thing': 'https://joshschaaf.com/creative-coding/spinny-thing',
     'Piet Mondrian': 'https://joshschaaf.com/creative-coding/mondrian',
-    'Current Sketch': 'https://joshschaaf.com/creative-coding/current-sketch'
+    'Light and Dark': 'https://joshschaaf.com/creative-coding/light-and-dark'
 };
 
 var html_string = ``;
