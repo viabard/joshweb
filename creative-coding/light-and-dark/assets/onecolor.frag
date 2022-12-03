@@ -10,8 +10,8 @@ precision mediump float;
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
 
-#define RADIUS 0.35
-#define NUM_BLOBS 2
+#define RADIUS 0.3
+#define NUM_BLOBS 50
 
 // we need the sketch resolution to perform some calculations
 uniform vec2 u_resolution;
@@ -58,10 +58,10 @@ void main() {
     // get distance between point and blob
     float d = distance(st, current_blob_st);
     
-    if(i == 0){
-      sum += RADIUS * (RADIUS / d);
+    if(i < 25){
+      sum += (RADIUS * (RADIUS / d));
     }else{
-      sum -= RADIUS * (RADIUS / d);
+      sum -= (RADIUS * (RADIUS / d));
     }
     
     

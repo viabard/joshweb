@@ -1,7 +1,7 @@
 //this variable will hold our shader object
 let shapeShader;
 let blobs = [];
-let num_blobs = 2;
+let num_blobs = 50;
 
 function preload(){
   theShader = loadShader('assets/onecolor.vert', 'assets/onecolor.frag');

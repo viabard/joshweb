@@ -2,8 +2,8 @@ class MyBlob {
     constructor(x, y){
         this.x = x;
         this.y = y;
-        this.xv = random(-5, 5);
-        this.yv = random(-5, 5);
+        this.xv = random(-1, 1);
+        this.yv = random(-1, 1);
     }
 
     move(){
