@@ -67,7 +67,7 @@ void main() {
     
   }
 
-  
+  st = rotate2D(st, u_time);
   color.xyz -= sum;
   
 
