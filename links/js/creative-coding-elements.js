@@ -5,7 +5,6 @@ var creative_coding_dict = {
     'Stars': 'https://joshschaaf.com/creative-coding/stars',
     'Bubbles': 'https://joshschaaf.com/creative-coding/bubbles',
     'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti',
-    'Spinny Thing': 'https://joshschaaf.com/creative-coding/spinny-thing',
     'Piet Mondrian': 'https://joshschaaf.com/creative-coding/mondrian',
     'Light and Dark': 'https://joshschaaf.com/creative-coding/light-and-dark',
     'Grid': 'https://joshschaaf.com/creative-coding/grid',
