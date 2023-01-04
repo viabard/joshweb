@@ -9,7 +9,8 @@ var creative_coding_dict = {
     'Piet Mondrian': 'https://joshschaaf.com/creative-coding/mondrian',
     'Light and Dark': 'https://joshschaaf.com/creative-coding/light-and-dark',
     'Grid': 'https://joshschaaf.com/creative-coding/grid',
-    '10 Minute(ish) Sketch': 'https://joshschaaf.com/creative-coding/ten-minutes'
+    '10 Minute(ish) Sketch': 'https://joshschaaf.com/creative-coding/ten-minutes',
+    'Glitch': 'https://joshschaaf.com/creative-coding/glitch'
 };
 
 var html_string = ``;
