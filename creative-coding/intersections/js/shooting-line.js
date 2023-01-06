@@ -1,6 +1,6 @@
 class ShootingLine {
-    constructor(x, y, direction, length, speed=10) {
-        
+    constructor(x, y, direction, length, speed=10, color='rgb(0, 255, 100)') {
+        this.color = color;
         this.length = length;
         this.speed = speed;
 
@@ -48,10 +48,11 @@ class ShootingLine {
             this.x1 = this.x2;
             this.y1 = this.y2;
         }
+        return [this.x1, this.y1, this.x2, this.y2];
     }
 
     show() {
-        stroke(0);
+        stroke(this.color);
         line(this.x1, this.y1, this.x2, this.y2);
     }
 }
