@@ -1,8 +1,10 @@
 class ShootingLine {
-    constructor(x, y, direction, length, speed=10, color='rgb(0, 255, 100)') {
+    constructor(x, y, direction, length, speed=10, color='rgb(0, 255, 100)', stroke_weight=1) {
         this.color = color;
         this.length = length;
         this.speed = speed;
+
+        this.stroke_weight = stroke_weight;
 
         this.x_dir;
         this.y_dir;
@@ -53,6 +55,7 @@ class ShootingLine {
 
     show() {
         stroke(this.color);
+        strokeWeight(this.stroke_weight);
         line(this.x1, this.y1, this.x2, this.y2);
     }
 }

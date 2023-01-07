@@ -1,16 +1,18 @@
-let background_color = 'rgb(255)' //rgb(210, 60, 130)
+let background_color = 0 //rgb(210, 60, 130)
 let current_lines = [];
 let current_pos = [];
 let num_lines;
-let line_speed = 5;
+let line_num = 50;
+let line_speed = 2;
 let l;
 
 let collisions_dict = {};
+let intersections = {};
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     l = Math.min(windowWidth, windowHeight);
-    num_lines = Math.floor(Math.max(windowWidth, windowHeight)/30);
+    num_lines = Math.floor(Math.max(windowWidth, windowHeight)/line_num);
     background(background_color);
     for(let i = 0; i < num_lines; i++) {
         let temp_x = Math.random()*width;
@@ -18,7 +20,7 @@ function setup() {
         let temp_length = Math.random()*200+500;
         let temp_direction = Math.floor(Math.random()*5);
         let temp_line_speed = Math.random()*line_speed + line_speed/2;
-        current_lines.push(new ShootingLine(temp_x, temp_y, temp_direction, temp_length, temp_line_speed));
+        current_lines.push(new ShootingLine(temp_x, temp_y, temp_direction, temp_length, temp_line_speed, 'rgb(255, 255, 255)', 2));
     }
 }
 
@@ -35,19 +37,35 @@ function draw() {
             let temp_length = Math.random()*l*0.75+l/4;
             let temp_direction = Math.floor(Math.random()*5);
             let temp_line_speed = Math.random()*line_speed + line_speed/2;
-            current_lines[i] = new ShootingLine(temp_x, temp_y, temp_direction, temp_length, temp_line_speed);
+            current_lines[i] = new ShootingLine(temp_x, temp_y, temp_direction, temp_length, temp_line_speed, 'rgb(255, 255, 255)', 2);
         }
         
 
         // console.log(Object.keys(collisions_dict).length);
 
-    }find_collisions();
+    }
+    find_collisions();
+    // create intersections
     for(let [key, value] of Object.entries(collisions_dict)) {
         // keys are x values, values are lists of y values 
         for(let i = 0; i < value.length; i++) {
-            stroke(0);
-            fill(0, 255, 0);
-            circle(key, value[i], 10);
+            let x = key;
+            let y = value[i];
+            if([x, y] in intersections){
+                //do nothing
+            } else {
+                let c = 'rgba(' + String(Math.floor((Math.random()*155+100)))+ ', ' + String(Math.floor((Math.random()*155+100))) + ', ' + String(Math.floor((Math.random()*155+100))) + ')';
+                intersections[[x, y]] = new Intersection(x, y, 1000, Math.random()*10+5, Math.random()*0.2+0.8, c, Math.random()*200);
+            }
+        }
+    }
+    // move intersections
+    for(let [key, value] of Object.entries(intersections)) {
+        // keys are x,y values and values are intersection objects
+        if(value.alive){
+            value.move_and_show();
+        } else {
+
         }
     }
       
@@ -94,6 +112,6 @@ function find_collisions() {
 function windowResized(){
     resizeCanvas(windowWidth, windowHeight);
     l = Math.min(windowWidth, windowHeight);
-    num_lines = Math.floor(Math.max(windowWidth, windowHeight)/30);
+    num_lines = Math.floor(Math.max(windowWidth, windowHeight)/line_num);
     
 }
