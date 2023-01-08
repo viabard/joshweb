@@ -9,7 +9,8 @@ var creative_coding_dict = {
     'Light and Dark': 'https://joshschaaf.com/creative-coding/light-and-dark',
     'Grid': 'https://joshschaaf.com/creative-coding/grid',
     '10 Minute(ish) Sketch': 'https://joshschaaf.com/creative-coding/ten-minutes',
-    'Glitch': 'https://joshschaaf.com/creative-coding/glitch'
+    'Glitch': 'https://joshschaaf.com/creative-coding/glitch',
+    'Intersections': 'https://joshschaaf.com/creative-coding/intersections'
 };
 
 var html_string = ``;
