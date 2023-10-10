@@ -1,17 +1,19 @@
 const main = document.querySelector('creative-coding');
 
+const prefix = 'https://joshschaaf.com/creative-coding/'
 
 var creative_coding_dict = {
-    'Stars': 'https://joshschaaf.com/creative-coding/stars',
-    'Bubbles': 'https://joshschaaf.com/creative-coding/bubbles',
-    'Spaghetti': 'https://joshschaaf.com/creative-coding/spaghetti',
-    'Piet Mondrian': 'https://joshschaaf.com/creative-coding/mondrian',
-    'Light and Dark': 'https://joshschaaf.com/creative-coding/light-and-dark',
-    'Grid': 'https://joshschaaf.com/creative-coding/grid',
-    '10 Minute(ish) Sketch': 'https://joshschaaf.com/creative-coding/ten-minutes',
-    'Glitch': 'https://joshschaaf.com/creative-coding/glitch',
-    'Intersections': 'https://joshschaaf.com/creative-coding/intersections',
-    'Debug-View': 'https://joshschaaf.com/creative-coding/debug-view'
+    'Stars': prefix + 'stars',
+    'Bubbles': prefix + 'bubbles',
+    'Spaghetti': prefix + 'spaghetti',
+    'Piet Mondrian': prefix + 'mondrian',
+    'Light and Dark': prefix + 'light-and-dark',
+    'Grid': prefix + 'grid',
+    '10 Minute(ish) Sketch': prefix + 'ten-minutes',
+    'Glitch': prefix + 'glitch',
+    'Intersections': prefix + 'intersections',
+    'Debug-View': prefix + 'debug-view',
+    'Spinny Things': prefix + 'spinny-thing'
 };
 
 var html_string = ``;
