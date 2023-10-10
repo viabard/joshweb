@@ -13,7 +13,7 @@ var creative_coding_dict = {
     'Glitch': prefix + 'glitch',
     'Intersections': prefix + 'intersections',
     'Debug-View': prefix + 'debug-view',
-    'Spinny Things': prefix + 'spinny-thing'
+    'Spinny Thing': prefix + 'spinny-thing'
 };
 
 var html_string = ``;
