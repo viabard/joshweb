@@ -1,13 +1,16 @@
 function setup() {
-    createCanvas(690, 690);
+    createCanvas(windowWidth, windowHeight);
     background(25);
     noStroke();
 }
 
 
-let num_particles = 20;
+let num_particles = 350;
 let path_size = 3;
-let speed = 0.9;
+let speed = 2;
+let spacing = 0.007
+let opacity = 255;
+let delay = 0.7;
 
 path_size = 10/path_size;
 
@@ -19,16 +22,63 @@ function draw() {
     
 
     // create a bunch of circles that move in... circles!
-    for (let i = 1; i < num_particles; i++) {
-        let opacity = 255;
-        let x = width/2 + (sin(speed*(frameCount-i*20)/(60))*i*0.1)*width/path_size;
-        x += sin(frameCount/20)*50;
-        let y = height/2 + (cos(speed*(frameCount-i*2)/(60))*i*0.1)*height/path_size;
-        y += cos(frameCount/20)*50;
+    for (let i = 1; i < num_particles+1; i++) {
+        
+        let x = width/2 + (sin(speed*(frameCount-i*delay)/(60))*i*spacing)*width/path_size;
+        //x += sin(frameCount/20)*50;
+        let y = height/2 + (cos(speed*(frameCount-i*delay)/(60))*i*spacing)*height/path_size;
+        //y += cos(frameCount/20)*50;
         
         let r = 255*sin(frameCount/120);
-        let g = 255*cos(frameCount/60);
-        fill(255, 255, 90, opacity);
+        let g = 255*cos(frameCount/120);
+        fill(255/height * y, 255/width * x, 255, opacity);
+        circle(x, y, 10);
+
+        // show paths
+        
+    }
+    for (let i = 0; i < num_particles; i++) {
+        
+        let x = width/2 + (sin(speed*(frameCount-i*delay)/(60) + 3.14159)*i*spacing)*width/path_size;
+        //x += sin(frameCount/20)*50;
+        let y = height/2 + (cos(speed*(frameCount-i*delay)/(60) + 3.14159)*i*spacing)*height/path_size;
+        //y += cos(frameCount/20)*50;
+        
+        let r = 255*sin(frameCount/120);
+        let g = 255*cos(frameCount/120);
+        fill(255/width * x, 255/height * y, 255, opacity);
+        circle(x, y, 10);
+
+        // show paths
+        
+    }
+
+    for (let i = 0; i < num_particles; i++) {
+        
+        let x = width/2 + (sin(speed*(frameCount-i*delay)/(60) + 3.14159/2)*i*spacing)*width/path_size;
+        //x += sin(frameCount/20)*50;
+        let y = height/2 + (cos(speed*(frameCount-i*delay)/(60) + 3.14159/2)*i*spacing)*height/path_size;
+        //y += cos(frameCount/20)*50;
+        
+        let r = 255*sin(frameCount/120);
+        let g = 255*cos(frameCount/120);
+        fill(255, 255/height * y, 255/width * x, opacity);
+        circle(x, y, 10);
+
+        // show paths
+        
+    }
+
+    for (let i = 0; i < num_particles; i++) {
+        
+        let x = width/2 + (sin(speed*(frameCount-i*delay)/(60) + 3.14159*1.5)*i*spacing)*width/path_size;
+        //x += sin(frameCount/20)*50;
+        let y = height/2 + (cos(speed*(frameCount-i*delay)/(60) + 3.14159*1.5)*i*spacing)*height/path_size;
+        //y += cos(frameCount/20)*50;
+        
+        let r = 255*sin(frameCount/120);
+        let g = 255*cos(frameCount/120);
+        fill(255, 255/width * x, 255/height * y, opacity);
         circle(x, y, 10);
 
         // show paths
