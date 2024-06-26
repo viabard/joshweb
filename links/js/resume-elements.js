@@ -3,6 +3,7 @@ const resume = document.querySelector('resume-elements');
 
 var images_gifs_etc = {
     'My current resume': 'https://joshschaaf.com/images/resume/current-resume.pdf',
+    'ProteoMixture Poster': 'https://joshschaaf.com/images/resume/josh_asms_2024_v2_PRINTED_affiliations.pdf' 
     'Conditional Mutagenesis of tcf21 in Zebrafish (undergraduate research poster)': "https://joshschaaf.com/images/resume/tcf21-poster.pdf"
 };
 
