@@ -194,8 +194,8 @@ function draw() {
     current_chord = chords[chordNums[time]];
     background(background_color);
     fill('white');
-    textSize(50)
-    text('Click anywehere for sound.', 0, 100)
+    textSize(20)
+    text('Click anywhere for sound.', 0, 100)
     for(let i = 0; i < current_lines.length; i++) {
         
         if(current_lines[i].alive) {
