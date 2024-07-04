@@ -2,8 +2,8 @@ let background_color = 0 //rgb(210, 60, 130)
 let current_lines = [];
 let current_pos = [];
 let num_lines;
-let line_num = 33;
-let line_speed = 5;
+let line_num = 40;
+let line_speed = 3;
 let l;
 
 let collisions_dict = {};
@@ -235,6 +235,7 @@ function draw() {
     for(let [key, value] of Object.entries(intersections)) {
         // keys are x,y values and values are intersection objects
         if(value.alive){
+            value.move_and_show();
             value.move_and_show();
             value.move_and_show();
         } else {
