@@ -145,6 +145,31 @@ function preload() {
     n_chords = 3;
     // change the chord every x seconds
     every_x_seconds = 6;
+
+    colors = new Object();
+    colors['I'] = [
+        'rgba(124, 106, 10)',
+        'rgba(186, 189, 141)',
+        'rgba(255, 218, 198)',
+        'rgba(250, 149, 0)',
+        'rgba(235, 100, 36)'
+    ];
+
+    colors['Cmaj7'] = [
+        'rgba(4, 231, 98)',
+        'rgba(245, 183, 0)',
+        'rgba(0, 161, 228)',
+        'rgba(220, 0, 115)',
+        'rgba(137, 252, 0)'
+    ];
+
+    colors['Am'] = [
+        'rgba(247, 37, 133)',
+        'rgba(114, 9, 183',
+        'rgba(58, 12, 163)',
+        'rgba(67, 97, 238)',
+        'rgba(76, 201, 240)'
+    ];
 }
 
 
@@ -194,8 +219,10 @@ function draw() {
     current_chord = chords[chordNums[time]];
     background(background_color);
     fill('white');
-    textSize(20)
-    text('Click anywhere for sound.', 0, 100)
+    textSize(40);
+    strokeWeight(1);
+    text('Click anywhere for sound.', 10, 100);
+    
     for(let i = 0; i < current_lines.length; i++) {
         
         if(current_lines[i].alive) {
@@ -224,8 +251,23 @@ function draw() {
             if([x, y] in intersections){
                 //do nothing
             } else {
-                let c = 'rgba(' + String(Math.floor((Math.random()*155+100)))+ ', ' + String(Math.floor((Math.random()*155+100))) + ', ' + String(Math.floor((Math.random()*155+100))) + ')';
-                intersections[[x, y]] = new Intersection(x, y, 1000, Math.random()*10+5, Math.random()*0.2+0.8, c, Math.random()*200);
+                // make an intersection (expanding circle)
+                // choose a color for the circle
+                //let c = 'rgba(' + String(Math.floor((Math.random()*155+100)))+ ', ' + String(Math.floor((Math.random()*155+100))) + ', ' + String(Math.floor((Math.random()*155+100))) + ')';
+                // grabbing a random color from the color palette for the current chord
+                let c = colors[chordNums[time]][getRandomInt(Object.keys(colors[chordNums[time]]).length)];
+                
+                // choose a starting transparency
+                let t = 0.8;
+                // choose a speed
+                let s = Math.random()*10+10;
+                // choose a stroke weight
+                let sw = Math.random()*200;
+                intersections[[x, y]] = new Intersection(x, y, size = 1000, 
+                    speed = s, 
+                    starting_transparency = t, 
+                    color = c,
+                    stroke_weight = sw);
                 //playChord(chords['I'][getRandomInt(4)], 1);
                 current_chord[getRandomInt(Object.keys(current_chord).length)][getRandomInt(Object.keys(current_chord[0]).length)].play();
             }
@@ -235,8 +277,6 @@ function draw() {
     for(let [key, value] of Object.entries(intersections)) {
         // keys are x,y values and values are intersection objects
         if(value.alive){
-            value.move_and_show();
-            value.move_and_show();
             value.move_and_show();
         } else {
             
