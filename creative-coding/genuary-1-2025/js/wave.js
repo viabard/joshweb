@@ -23,6 +23,7 @@ class Wave {
 
     isAlive() {
         if (this.lines.length === 0) {
+            //console.log('dead wave')
             return false
         } else {
             return true
