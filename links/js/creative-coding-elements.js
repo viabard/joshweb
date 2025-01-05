@@ -14,7 +14,8 @@ var creative_coding_dict = {
     'Intersections': prefix + 'intersections',
     'Debug-View': prefix + 'debug-view',
     'Spinny Thing': prefix + 'spinny-thing',
-    'Spinny Loop': prefix + 'spinny-loop'
+    'Spinny Loop': prefix + 'spinny-loop',
+    'Vertical Lines': prefix + 'genuary-1-2025'
 };
 
 var html_string = ``;
