@@ -3,7 +3,7 @@ class Wave {
         Takes starting location (x,y), direction (0 for x direction, 1 for y direction), speed (can be negative)
         amp_speed (how fast lines shoot), 
     */
-    constructor(x, y, direction=0, speed=1, amplitude=1, amp_speed=1) {
+    constructor(x, y, direction=0, speed=1, amplitude=1, amp_speed=1, color='rgb(0, 255, 100)', stroke_weight=1) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -19,6 +19,10 @@ class Wave {
         let lines = [];
 
         this.lines = lines;
+
+        this.color = color;
+
+        this.stroke_weight = stroke_weight;
     }
 
     isAlive() {
@@ -42,7 +46,7 @@ class Wave {
         // if we are inside the canvas, generate a new shooting line
         let inside_canvas = this.x > 0 && this.x < width && this.y > 0 && this.y < height;
         if (inside_canvas) {
-            this.lines.push(new ShootingLine(this.x, this.y, this.shooting_direction, this.amplitude, this.amp_speed))
+            this.lines.push(new ShootingLine(this.x, this.y, this.shooting_direction, this.amplitude, this.amp_speed, this.color, this.stroke_weight))
         }
 
         // now update all shooting lines, remove dead lines

@@ -1,4 +1,4 @@
-let bg = 100;
+let bg = 0;
 
 let waves = [];
 
@@ -33,7 +33,13 @@ function draw() {
             waves_spliced++;
 
             // add a new wave
-            waves_copy.push(new Wave(1, getRandomInt(0, height), 0, getRandomInt(7, 14), getRandomInt(50, 100), getRandomInt(4, 9)));
+            /// color
+            const r = getRandomInt(200,256);
+            const g = getRandomInt(1, 101);
+            const b = getRandomInt(1, 256);
+            let color = "rgb(" + r + "," + g + "," + b + ")"
+            /// wave
+            waves_copy.push(new Wave(1, getRandomInt(0, height), 0, getRandomInt(7, 14), getRandomInt(50, 100), getRandomInt(4, 9), color=color, stroke_weight=2));
         }
     }
     waves = waves_copy;
