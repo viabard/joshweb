@@ -15,7 +15,7 @@ var creative_coding_dict = {
     'Debug-View': prefix + 'debug-view',
     'Spinny Thing': prefix + 'spinny-thing',
     'Spinny Loop': prefix + 'spinny-loop',
-    'Vertical Lines': prefix + 'genuary-1-2025'
+    'Horizontal & Vertical': prefix + 'genuary-1-2025'
 };
 
 var html_string = ``;
