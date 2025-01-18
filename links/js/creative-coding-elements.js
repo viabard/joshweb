@@ -16,7 +16,8 @@ var creative_coding_dict = {
     'Spinny Thing': prefix + 'spinny-thing',
     'Spinny Loop': prefix + 'spinny-loop',
     'Horizontal & Vertical': prefix + 'genuary-1-2025',
-    'Layers': prefix + 'genuary-2-2025'
+    'Layers': prefix + 'genuary-2-2025',
+    '42': prefix + 'genuary-3-2025'
 };
 
 var html_string = ``;

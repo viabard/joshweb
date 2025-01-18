@@ -1,7 +1,7 @@
 let bg = 0;
 
 let boxes = [];
-let n_boxes = 50;
+let n_boxes = 25;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
