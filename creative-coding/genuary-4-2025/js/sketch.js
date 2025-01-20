@@ -77,7 +77,9 @@ function draw() {
 	if (mouseIsPressed) {
 		let x = Math.floor((mouseX+pixelSize/2)/pixelSize);
         let y = Math.floor((mouseY+pixelSize/2)/pixelSize);
-        gridPixels[x][y].setShrinking();
+        if (x >= 0 && y >= 0 && x <= Math.floor(width/pixelSize) && y <= Math.floor(height/pixelSize)) {
+            gridPixels[x][y].setShrinking();
+        }
 	}
 	for (let x = 0; x < width + pixelSize; x += pixelSize) {
         let xi = x/pixelSize;
