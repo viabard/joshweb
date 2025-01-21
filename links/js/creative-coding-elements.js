@@ -18,7 +18,8 @@ var creative_coding_dict = {
     'Horizontal & Vertical': prefix + 'genuary-1-2025',
     'Layers': prefix + 'genuary-2-2025',
     'Forty-Two': prefix + 'genuary-3-2025',
-    'Black on Black': prefix + 'genuary-4-2025'
+    'Black on Black': prefix + 'genuary-4-2025',
+    'Isometric': prefix + 'genuary-5-2025'
 };
 
 var html_string = ``;

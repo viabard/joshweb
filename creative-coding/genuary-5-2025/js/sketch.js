@@ -1,7 +1,7 @@
-let cubeWidth = 75;
+let cubeWidth = 60;
 
 class IsometricCube {
-	constructor(x, y, width, height, leftColor, rightColor, topColor, moveHeight=0, movingSpeed=0.01) {
+	constructor(x, y, width, height, leftColor, rightColor, topColor, movingSpeed=0.01) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -9,12 +9,13 @@ class IsometricCube {
 		this.leftColor = leftColor;
 		this.rightColor = rightColor;
 		this.topColor = topColor;
-		this.moveHeight = moveHeight;
 		this.progress = 0;
 		this.currentHeight = this.height;
 		this.moving = false;
 		this.movingSpeed = movingSpeed;
-		this.moved = false;
+		this.moved = true;
+
+		this.moveHeight = 0;
 	}
 	
 	show() {
@@ -51,22 +52,28 @@ class IsometricCube {
 		endShape(CLOSE);
 	}
 
-	move(moveHeight) {
+	move(moveHeight=this.moveHeight, movingSpeed=this.movingSpeed) {
+		this.movingSpeed = movingSpeed;
+		this.moveHeight = moveHeight;
 
 		let progressTimesPi = this.progress * Math.PI - Math.PI/2;
 		progressTimesPi = (Math.sin(progressTimesPi) + 1)/2;
-		this.currentHeight = lerp(this.height, moveHeight, progressTimesPi);
+		this.currentHeight = lerp(this.height, this.moveHeight, progressTimesPi);
 
-		if (this.progress <= 1) {
+		if (!this.moved && this.progress <= 1) {
 			this.progress += this.movingSpeed;
 		} else {
 			this.moved = true;
 			this.height = this.currentHeight;
+			this.progress = 0;
 		}
 	}
 
 	getMovedStatus() {
-		return this.moved;
+		return (this.moved);
+	}
+	setMovedStatus(moved) {
+		this.moved = moved;
 	}
 }
 
@@ -93,7 +100,24 @@ function setup() {
 			} else {
 				thingy = 0;
 			}
-			tempYList.push(new IsometricCube(x-thingy, y, cubeWidth, random(10, 200), 'rgba(255,34,231,1)', 'rgba(211,230,53,1)', 'rgba(222,150,150,1)'));
+			/// color
+			let r = Math.floor(random(1, 25));
+			let g = Math.floor(random(125, 250));
+			let b = Math.floor(random(150, 250));
+			let color1 = "rgb(" + r + "," + g + "," + b + ")";
+			/// color
+			let r2 = Math.floor(random(1, 30));
+			let g2 = Math.floor(random(40,75));
+			let b2 = Math.floor(random(40,100));
+			let color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+			/// color
+			let r3 = Math.floor(random(70, 80));
+			let g3 = Math.floor(random(165, 185));
+			let b3 = Math.floor(random(190, 210));
+			let color3 = "rgb(" + r3 + "," + g3 + "," + b3 + ")";
+
+
+			tempYList.push(new IsometricCube(x-thingy, y, cubeWidth, random(10, 100), color1, color2, color3));
 		}
 		pixelGrid.push(tempYList);
 	}
@@ -108,7 +132,12 @@ function draw() {
 		let yi = Math.round(y/posYDiff);
 		for (let x = 0; x < width+(cubeWidth*2); x += posXDiff) {
 			let xi = Math.round(x/posXDiff);
-			pixelGrid[xi][yi].move(100);
+			if (pixelGrid[xi][yi].getMovedStatus()) {
+				pixelGrid[xi][yi].setMovedStatus(false);
+				pixelGrid[xi][yi].move(random(10, 130), random(15, 50)/1000);
+			} else {
+				pixelGrid[xi][yi].move();
+			}
 			pixelGrid[xi][yi].show();
 		}
 	}
