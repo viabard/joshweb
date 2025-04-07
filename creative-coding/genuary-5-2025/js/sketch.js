@@ -1,11 +1,14 @@
 let cubeWidth = 60;
 
-class GrassBlade {
-	constructor(x, y, width, height, xMove=x, yMove=y, movingSpeed=0.01) {
+class IsometricCube {
+	constructor(x, y, width, height, leftColor, rightColor, topColor, movingSpeed=0.01) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.leftColor = leftColor;
+		this.rightColor = rightColor;
+		this.topColor = topColor;
 		this.progress = 0;
 		this.currentHeight = this.height;
 		this.moving = false;
